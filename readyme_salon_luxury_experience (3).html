@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#E30613">
+  
+  <title>READYME SALON | Pooja Sarkar - Luxury Studio & Door-to-Door Home Salon</title>
+  
+  <!-- Fonts: Montserrat, Cinzel & Plus Jakarta Sans for Ultra-Luxury Readability -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              red: '#E30613',
+              darkRed: '#9e000c',
+              softPink: '#FFF0F2',
+              cream: '#FCFAF8',
+              gold: '#D4AF37',
+              goldGlow: '#F5DEB3',
+              emerald: '#128C7E',
+              waGreen: '#25D366',
+              waDark: '#075E54',
+              charcoal: '#1A1818'
+            }
+          },
+          fontFamily: {
+            sans: ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            luxury: ['Cinzel', 'serif'],
+            body: ['Plus Jakarta Sans', 'sans-serif']
+          },
+          boxShadow: {
+            'luxe-soft': '0 10px 30px -5px rgba(227, 6, 19, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04)',
+            'luxe-hover': '0 25px 45px -10px rgba(227, 6, 19, 0.22), 0 8px 20px rgba(0, 0, 0, 0.06)',
+            'green-luxe': '0 12px 35px -8px rgba(37, 211, 102, 0.45)',
+            'arch-mirror': '0 0 35px 4px rgba(212, 175, 55, 0.35), inset 0 0 20px rgba(255, 255, 255, 0.7)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* iOS & Android System Resets */
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      scroll-padding-top: 80px;
+    }
+    
+    body {
+      background-color: #FFFFFF;
+      color: #1A1818;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      width: 100%;
+      -webkit-tap-highlight-color: transparent;
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+    }
+
+    /* Prevent iOS auto-zoom on input tap (requires font-size >= 16px) */
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+
+    /* Luxury Marble White Aesthetic Background */
+    .marble-bg {
+      background-color: #FFFFFF;
+      background-image: 
+        radial-gradient(at 10% 10%, rgba(227, 6, 19, 0.03) 0px, transparent 50%),
+        radial-gradient(at 90% 20%, rgba(212, 175, 55, 0.06) 0px, transparent 50%),
+        radial-gradient(at 30% 80%, rgba(37, 211, 102, 0.03) 0px, transparent 60%),
+        linear-gradient(180deg, #FFFFFF 0%, #FAFAF8 100%);
+    }
+
+    /* Golden Arched Mirror Aesthetic */
+    .arched-mirror-card {
+      border-radius: 140px 140px 24px 24px;
+      border: 3px solid #D4AF37;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.3), inset 0 0 15px rgba(255, 255, 255, 0.8);
+      position: relative;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    /* Fluted Counter Pattern */
+    .fluted-texture {
+      background: repeating-linear-gradient(
+        90deg,
+        #E30613,
+        #E30613 10px,
+        #B5000C 10px,
+        #B5000C 16px
+      );
+    }
+
+    /* 3D Glass Tilt Card with Mobile Touch Safety */
+    .card-luxury {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(227, 6, 19, 0.12);
+      border-radius: 20px;
+      transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+    }
+    
+    @media (hover: hover) and (pointer: fine) {
+      .card-luxury:hover {
+        transform: translateY(-6px) scale(1.01);
+        border-color: rgba(227, 6, 19, 0.35);
+        box-shadow: 0 20px 40px -10px rgba(227, 6, 19, 0.18), 0 0 15px rgba(212, 175, 55, 0.2);
+      }
+    }
+
+    /* Pulsing Floating Action Button */
+    @keyframes wa-pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .wa-pulse-glow {
+      animation: wa-pulse 2.2s infinite ease-in-out;
+    }
+
+    /* Safe Area Padding for iPhone notch and gesture bar */
+    .mobile-safe-bottom {
+      padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
+    }
+
+    /* Hide scrollbars smoothly */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="marble-bg relative selection:bg-brand-red selection:text-white">
+
+  <!-- Interactive 3D Ambient Particle Canvas -->
+  <canvas id="ambientCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+  <!-- HEADER & NAVIGATION (Mobile Responsive & Touch Optimized) -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-red-100 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- EXACT LOGO REPLICA (Red badge with white READYME SALON & bottom white band with POOJA SARKAR) -->
+      <a href="#home" class="flex items-center group active:scale-95 transition-transform" aria-label="Readyme Salon Home">
+        <div class="bg-brand-red px-3.5 py-2 rounded-sm shadow-md flex flex-col justify-center items-center text-center">
+          <div class="text-[19px] sm:text-[22px] font-black tracking-normal leading-[1.02] text-white select-none">
+            READYME
+          </div>
+          <div class="text-[28px] sm:text-[33px] font-light tracking-[0.06em] leading-[0.9] text-white select-none">
+            SALON
+          </div>
+          <div class="mt-1 w-full bg-white py-[2px] px-2 text-center rounded-[1px]">
+            <span class="text-[8px] sm:text-[9.5px] font-extrabold tracking-[0.34em] text-brand-red block uppercase leading-none pl-1">
+              POOJA SARKAR
+            </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden lg:flex items-center space-x-7 text-xs sm:text-sm font-bold tracking-wider uppercase text-gray-800">
+        <a href="#home" class="hover:text-brand-red transition-colors">Home</a>
+        <a href="#home-service" class="flex items-center gap-1.5 text-green-700 bg-green-50 px-3.5 py-1.5 rounded-full border border-green-300 hover:bg-green-100 transition-all font-extrabold shadow-sm">
+          <i class="fa-solid fa-house-chimney-medical text-green-600"></i> Door to Door
+        </a>
+        <a href="#services" class="hover:text-brand-red transition-colors">Services</a>
+        <a href="#complimentary" class="text-brand-red flex items-center gap-1 hover:text-brand-darkRed transition-colors">
+          <i class="fa-solid fa-gift text-brand-gold"></i> Free Service
+        </a>
+        <a href="#stats" class="hover:text-brand-red transition-colors">Experience</a>
+        <a href="#booking" class="hover:text-brand-red transition-colors">Studio Book</a>
+      </nav>
+
+      <!-- Desktop & Tablet WhatsApp Quick Button -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar%20Readyme%20Salon,%20I%20would%20like%20to%20inquire%20about%20your%20services" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebc57] text-white text-xs sm:text-sm font-bold py-2.5 px-4 sm:px-5 rounded-full shadow-md transition-all active:scale-95">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>WhatsApp: 8588902235</span>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button (Min 48px Touch Target) -->
+      <button id="mobileNavToggle" 
+              aria-label="Open Navigation Menu"
+              class="lg:hidden p-3 rounded-xl text-gray-800 hover:text-brand-red hover:bg-red-50 focus:outline-none transition-colors active:scale-90">
+        <i class="fa-solid fa-bars-staggered text-2xl" id="navIcon"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER NAVIGATION MENU (Optimized for iOS & Android gestures) -->
+  <div id="mobileDrawer" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+    <div id="drawerPanel" class="fixed top-0 right-0 w-[85%] max-w-sm h-full bg-white shadow-2xl p-6 flex flex-col justify-between transform translate-x-full transition-transform duration-300 ease-out overflow-y-auto">
+      
+      <div>
+        <!-- Drawer Header with Logo and Close -->
+        <div class="flex items-center justify-between pb-5 border-b border-gray-100">
+          <div class="bg-brand-red px-2.5 py-1.5 rounded-sm shadow text-center">
+            <span class="text-sm font-black text-white block leading-none">READYME SALON</span>
+            <span class="text-[7px] font-black text-white tracking-widest block uppercase mt-0.5">POOJA SARKAR</span>
+          </div>
+          <button id="drawerCloseBtn" aria-label="Close Navigation Menu" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 active:scale-90">
+            <i class="fa-solid fa-xmark text-lg"></i>
+          </button>
+        </div>
+
+        <!-- Links List with Large Touch Targets -->
+        <nav class="mt-6 space-y-3 font-semibold text-gray-800 text-sm">
+          <a href="#home" class="drawer-link flex items-center justify-between p-3.5 rounded-xl hover:bg-red-50 hover:text-brand-red transition-all">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-house text-brand-red"></i> Home</span>
+            <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+          </a>
+
+          <!-- Highlighted Door to Door Mobile Link -->
+          <a href="#home-service" class="drawer-link flex items-center justify-between p-3.5 rounded-xl bg-green-50 text-green-800 border-2 border-green-300 font-extrabold shadow-sm">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-house-chimney-medical text-green-600 text-lg"></i> Door-to-Door Service</span>
+            <span class="text-[10px] bg-green-600 text-white font-black px-2 py-0.5 rounded-full">POPULAR</span>
+          </a>
+
+          <a href="#services" class="drawer-link flex items-center justify-between p-3.5 rounded-xl hover:bg-red-50 hover:text-brand-red transition-all">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-wand-magic-sparkles text-brand-red"></i> Studio Services</span>
+            <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+          </a>
+
+          <a href="#complimentary" class="drawer-link flex items-center justify-between p-3.5 rounded-xl bg-red-50 text-brand-red font-bold">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-gift text-brand-gold text-base"></i> Free Complimentary Gift</span>
+            <i class="fa-solid fa-sparkles text-xs text-amber-500"></i>
+          </a>
+
+          <a href="#stats" class="drawer-link flex items-center justify-between p-3.5 rounded-xl hover:bg-red-50 hover:text-brand-red transition-all">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-award text-amber-600"></i> Experience & Stats</span>
+            <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+          </a>
+
+          <a href="#booking" class="drawer-link flex items-center justify-between p-3.5 rounded-xl hover:bg-red-50 hover:text-brand-red transition-all">
+            <span class="flex items-center gap-3"><i class="fa-solid fa-calendar-check text-brand-red"></i> Online Booking</span>
+            <i class="fa-solid fa-chevron-right text-xs text-gray-400"></i>
+          </a>
+        </nav>
+      </div>
+
+      <!-- Drawer Bottom Action Buttons -->
+      <div class="pt-6 border-t border-gray-100 space-y-3">
+        <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar,%20I%20am%20chatting%20from%20the%20mobile%20website" 
+           target="_blank" 
+           class="w-full py-3.5 px-4 rounded-xl bg-[#25D366] text-white font-extrabold text-sm flex items-center justify-center gap-2 shadow active:scale-95 transition-transform">
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+          <span>Chat on WhatsApp: 8588902235</span>
+        </a>
+        <a href="tel:+918588902235" 
+           class="w-full py-3.5 px-4 rounded-xl bg-gray-900 text-white font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition-transform">
+          <i class="fa-solid fa-phone text-sm"></i>
+          <span>Call Salon: +91 8588902235</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <main class="relative z-10">
+
+    <!-- HERO SECTION: High-impact White Luxury Theme with Salon Interior Vibe -->
+    <section id="home" class="pt-4 pb-14 sm:pt-10 sm:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div class="max-w-7xl mx-auto">
+        
+        <!-- COMPLIMENTARY PROMO PILL BANNER -->
+        <div class="flex justify-center mb-6">
+          <a href="#complimentary" class="inline-flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full border-2 border-brand-red/30 bg-gradient-to-r from-red-50 via-white to-amber-50 shadow-sm active:scale-95 transition-transform">
+            <span class="w-2.5 h-2.5 rounded-full bg-brand-red animate-ping shrink-0"></span>
+            <span class="text-xs sm:text-sm font-black text-brand-red tracking-wide text-center">
+              ✨ FREE COMPLIMENTARY SERVICE AVAILABLE WITH EVERY BOOKING ✨
+            </span>
+            <i class="fa-solid fa-arrow-right text-xs text-brand-red hidden sm:inline"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Hero Text -->
+          <div class="lg:col-span-7 text-center lg:text-left">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-softPink rounded-full text-brand-red text-xs font-bold uppercase tracking-wider mb-4 border border-brand-red/20">
+              <i class="fa-solid fa-crown text-brand-gold"></i>
+              <span>Pooja Sarkar • Luxury Beauty Studio & Doorstep Care</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black uppercase text-gray-900 tracking-tight leading-[1.12]">
+              CINEMATIC LUXURY. <br>
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-red via-red-600 to-amber-600">
+                UNPARALLELED GLOW.
+              </span>
+            </h1>
+
+            <p class="mt-4 sm:mt-5 text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
+              Experience the royal glow of <strong class="text-brand-red font-bold">READYME SALON</strong>. Relax in our signature studio with golden illuminated arched mirrors, or book certified master stylists for <span class="text-green-700 font-extrabold bg-green-50 px-2 py-0.5 rounded border border-green-300">Door-to-Door Home Service</span> in your own personal sanctuary.
+            </p>
+
+            <!-- Dual Primary Call to Actions (Mobile Optimized Touch Targets) -->
+            <div class="mt-7 flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5">
+              
+              <!-- DOOR TO DOOR (Attractive Green) -->
+              <a href="#home-service" 
+                 class="inline-flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gradient-to-r from-[#128C7E] to-[#25D366] text-white font-black text-sm sm:text-base shadow-green-luxe active:scale-95 transition-transform border border-green-300">
+                <i class="fa-solid fa-house-chimney-medical text-xl text-white"></i>
+                <span>Book Door-to-Door Service</span>
+              </a>
+
+              <!-- Studio WhatsApp Appointment -->
+              <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar%20Readyme%20Salon,%20I%20want%20to%20book%20an%20Online%20Appointment%20and%20claim%20the%20Free%20Complimentary%20Service." 
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-flex items-center justify-center gap-3 py-4 px-6 rounded-2xl bg-gradient-to-r from-brand-red to-brand-darkRed text-white font-extrabold text-sm sm:text-base shadow-lg shadow-red-500/20 active:scale-95 transition-transform border border-brand-red">
+                <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
+                <span>Studio Appointment</span>
+              </a>
+
+            </div>
+
+            <!-- Trust Pills -->
+            <div class="mt-6 pt-5 border-t border-gray-100 flex flex-wrap items-center justify-center lg:justify-start gap-4 text-xs font-semibold text-gray-600">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-circle-check text-brand-red"></i> 100% Genuine Cosmetics</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-house-circle-check text-green-600"></i> Sterilized Home Kits</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-star text-amber-500"></i> Certified Stylists</span>
+            </div>
+
+          </div>
+
+          <!-- Hero Right: 3D Interior Mockup representation -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="w-full max-w-sm sm:max-w-md arched-mirror-card p-4 sm:p-5 flex flex-col justify-between min-h-[380px] sm:min-h-[440px] shadow-2xl">
+              
+              <!-- Top Gold Hanging Lamps Representation -->
+              <div class="flex justify-center space-x-6 w-full pt-1">
+                <div class="flex flex-col items-center">
+                  <div class="w-0.5 h-8 bg-amber-400"></div>
+                  <div class="w-3 h-7 bg-gradient-to-b from-amber-300 to-amber-600 rounded-sm shadow-sm"></div>
+                </div>
+                <div class="flex flex-col items-center">
+                  <div class="w-0.5 h-12 bg-amber-400"></div>
+                  <div class="w-3 h-9 bg-gradient-to-b from-amber-300 to-amber-600 rounded-sm shadow-sm"></div>
+                </div>
+              </div>
+
+              <!-- Center Replica of Exact Logo -->
+              <div class="my-auto text-center bg-white/95 backdrop-blur-md p-5 rounded-2xl border border-red-100 shadow-md">
+                <div class="bg-brand-red px-3.5 py-2 rounded-sm inline-block shadow-md">
+                  <div class="text-xl font-black text-white leading-tight">READYME SALON</div>
+                  <div class="bg-white text-brand-red text-[8px] font-black tracking-widest uppercase py-0.5 px-2 mt-0.5">
+                    POOJA SARKAR
+                  </div>
+                </div>
+                <h2 class="text-xs sm:text-sm font-black text-gray-900 uppercase tracking-wider mt-3">Signature Studio & Home Care</h2>
+                <p class="text-[11px] text-amber-700 font-semibold italic mt-0.5">"World-Class Transformations Wherever You Are"</p>
+                
+                <div class="mt-3 flex items-center justify-center gap-2">
+                  <span class="text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded bg-green-100 text-green-800">
+                    <i class="fa-solid fa-car-side"></i> Doorstep Available
+                  </span>
+                  <span class="text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded bg-red-100 text-brand-red">
+                    <i class="fa-solid fa-gem"></i> Studio Glow
+                  </span>
+                </div>
+              </div>
+
+              <!-- Fluted Red Texture Counter with Core Services -->
+              <div class="w-full rounded-xl overflow-hidden shadow border border-red-200">
+                <div class="h-9 fluted-texture flex items-center justify-around text-white text-[9px] sm:text-[10px] font-extrabold px-2 tracking-wider">
+                  <span>MAKEUP</span>
+                  <span>•</span>
+                  <span>HAIR</span>
+                  <span>•</span>
+                  <span>SKIN</span>
+                  <span>•</span>
+                  <span>NAIL</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DOOR TO DOOR / HOME SERVICE SECTION (Vibrant Green & Gold Luxury Design) -->
+    <section id="home-service" class="py-14 sm:py-20 bg-gradient-to-b from-green-50/70 via-white to-emerald-50/40 border-y-2 border-green-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-black uppercase tracking-widest border border-emerald-300 shadow-sm mb-3">
+            <i class="fa-solid fa-sparkles text-amber-500"></i>
+            <span>Doorstep VIP Salon Experience</span>
+            <i class="fa-solid fa-sparkles text-amber-500"></i>
+          </div>
+          
+          <h2 class="text-2xl sm:text-4xl font-black uppercase text-gray-900 tracking-tight">
+            Door to Door <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-green-600">Home Service</span>
+          </h2>
+          
+          <p class="text-gray-600 text-xs sm:text-sm mt-2 font-medium">
+            Ab salon jane ki koi tension nahi! Shaadi, party ya regular self-care ke liye Pooja Sarkar aur team apke ghar aayegi with 100% hygiene and genuine products. Fill below for direct WhatsApp confirmation!
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left Perks info for Mobile & Desktop -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <div class="bg-white rounded-2xl p-5 sm:p-6 border-2 border-emerald-200 shadow-sm">
+              <h3 class="text-base sm:text-lg font-black text-gray-900 uppercase flex items-center gap-2">
+                <i class="fa-solid fa-house-laptop text-emerald-600 text-xl"></i>
+                <span>Ghar Par Hi Kyun Book Karein?</span>
+              </h3>
+
+              <div class="mt-4 space-y-3 text-xs sm:text-sm font-semibold text-gray-700">
+                <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-emerald-50/80">
+                  <i class="fa-solid fa-circle-check text-emerald-600 mt-1"></i>
+                  <div>
+                    <h4 class="font-extrabold text-gray-900">Zero Traffic & Zero Wait</h4>
+                    <p class="text-[11px] text-gray-600 font-normal mt-0.5">Apne cozy bedroom ya dressing area me relax karein while we glam you up.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-emerald-50/80">
+                  <i class="fa-solid fa-spray-can-sparkles text-emerald-600 mt-1"></i>
+                  <div>
+                    <h4 class="font-extrabold text-gray-900">Sterilized Vanity & Tools</h4>
+                    <p class="text-[11px] text-gray-600 font-normal mt-0.5">Disinfected makeup brushes, single-use wipes, and premium imported salon cosmetics.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-2.5 p-2.5 rounded-xl bg-amber-50 border border-amber-200">
+                  <i class="fa-solid fa-gift text-amber-600 mt-1"></i>
+                  <div>
+                    <h4 class="font-extrabold text-amber-800">Free Complimentary Benefit</h4>
+                    <p class="text-[11px] text-gray-700 font-normal mt-0.5">Complimentary mini facial glow pack with every home package inquiry!</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick direct phone button -->
+              <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] font-bold uppercase text-gray-500">Home Service Hotline</span>
+                  <span class="text-sm font-black text-emerald-700 block">+91 8588902235</span>
+                </div>
+                <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar,%20I%20have%20an%20urgent%20query%20regarding%20Door%20to%20Door%20Home%20Salon%20Service." 
+                   target="_blank" 
+                   class="px-3.5 py-2 bg-emerald-600 text-white rounded-xl text-xs font-bold active:scale-95 transition-transform shadow">
+                  Quick Chat
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right: Complete Door-to-Door WhatsApp Inquiry Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-white rounded-3xl p-5 sm:p-8 border-2 border-emerald-400 shadow-xl relative">
+              
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-gray-100">
+                <div>
+                  <h3 class="text-lg sm:text-xl font-black uppercase text-gray-900">Home Service Inquiry</h3>
+                  <p class="text-[11px] text-gray-500">Enter details to generate instant WhatsApp inquiry</p>
+                </div>
+                <span class="bg-green-600 text-white text-[10px] font-black uppercase px-2.5 py-1 rounded-full">
+                  WhatsApp Direct
+                </span>
+              </div>
+
+              <form id="doorstepForm" class="space-y-4">
+                
+                <!-- Client Name & Mobile -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="homeName" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">
+                      Client Full Name *
+                    </label>
+                    <input type="text" id="homeName" required placeholder="e.g. Aarti Sharma"
+                           class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-500 outline-none text-gray-900 transition-all">
+                  </div>
+
+                  <div>
+                    <label for="homePhone" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">
+                      Mobile Number *
+                    </label>
+                    <input type="tel" id="homePhone" required placeholder="e.g. 9876543210"
+                           class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-500 outline-none text-gray-900 transition-all">
+                  </div>
+                </div>
+
+                <!-- Occasion & Desired Services -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="homeOccasion" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">
+                      Occasion / Program *
+                    </label>
+                    <select id="homeOccasion" required
+                            class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-500 outline-none text-gray-900 transition-all">
+                      <option value="Bridal Wedding Ceremony">Bridal / Wedding Ceremony</option>
+                      <option value="Engagement / Roka Ceremony">Engagement / Roka Ceremony</option>
+                      <option value="Reception Glamour">Reception Glamour</option>
+                      <option value="Party & Family Function">Party & Family Function</option>
+                      <option value="Pre-Bridal Package">Pre-Bridal Full Package</option>
+                      <option value="Festival / Karwa Chauth / Diwali">Festival / Special Occasion</option>
+                      <option value="Regular Home Grooming & Hair Spa">Regular Home Grooming & Hair Spa</option>
+                      <option value="Photoshoot / Fashion Shoot">Photoshoot / Fashion Shoot</option>
+                      <option value="Other Custom Home Request">Other Custom Home Request</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="homeServiceSelect" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">
+                      Select Service *
+                    </label>
+                    <select id="homeServiceSelect" required
+                            class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-500 outline-none text-gray-900 transition-all">
+                      <option value="HD Makeup & Bridal Styling">HD Makeup & Bridal Styling</option>
+                      <option value="Hair (Botox / Keratin / Spa / Cut)">Hair (Botox / Keratin / Spa / Cut)</option>
+                      <option value="Skin (Hydra Glow Facial & Detan)">Skin (Hydra Glow Facial & Detan)</option>
+                      <option value="Nail Extensions & Gel Art">Nail Extensions & Gel Art</option>
+                      <option value="Complete All-in-One Package">Complete All-in-One Package (Makeup + Hair + Skin + Nails)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Date & Preferred Time -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="homeDate" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">
+                      Required Date *
+                    </label>
+                    <input type="date" id="homeDate" required
+                           class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-500 outline-none text-gray-900 transition-all">
+                  </div>
+
+                  <div>
+                    <label for="homeTiming" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">
+                      Preferred Time Slot *
+                    </label>
+                    <select id="homeTiming" required
+                            class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-500 outline-none text-gray-900 transition-all">
+                      <option value="Morning (06:00 AM - 09:00 AM)">Early Morning (06:00 AM - 09:00 AM)</option>
+                      <option value="Morning (09:00 AM - 12:00 PM)">Morning (09:00 AM - 12:00 PM)</option>
+                      <option value="Afternoon (12:00 PM - 03:00 PM)">Afternoon (12:00 PM - 03:00 PM)</option>
+                      <option value="Evening (03:00 PM - 06:00 PM)">Evening (03:00 PM - 06:00 PM)</option>
+                      <option value="Night (06:00 PM - 09:00 PM)">Night (06:00 PM - 09:00 PM)</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Complete Full Address Field -->
+                <div>
+                  <label for="homeAddressFull" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">
+                    Complete Address (House/Flat No, Landmark, Area & Pincode) *
+                  </label>
+                  <textarea id="homeAddressFull" required rows="3" 
+                            placeholder="e.g., Flat 304, Tower B, Silver Palms, Near City Metro Station, Sector 21, New Delhi - 110075"
+                            class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-emerald-500 outline-none text-gray-900 transition-all resize-none"></textarea>
+                </div>
+
+                <!-- Green Submit Button -->
+                <button type="submit" 
+                        class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 via-[#25D366] to-[#128C7E] text-white font-black text-sm sm:text-base shadow-green-luxe flex items-center justify-center gap-2.5 active:scale-95 transition-transform border border-green-300">
+                  <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
+                  <span>Submit Home Service Inquiry to 8588902235</span>
+                </button>
+
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SCROLL-TRIGGERED STATS SECTION (5+ Years, 100% Satisfaction, 1000+ Clients) -->
+    <section id="stats" class="py-14 sm:py-20 bg-white border-b border-red-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <span class="text-xs font-black uppercase tracking-widest text-brand-red bg-brand-softPink px-3.5 py-1 rounded-full border border-brand-red/20">
+            Our Proven Track Record
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black uppercase text-gray-900 mt-2">
+            Excellence You Can Trust
+          </h2>
+          <p class="text-gray-500 text-xs sm:text-sm mt-1">Delivering five-star luxury across our flagship studio and door-to-door home visits.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="statsRow">
+          
+          <!-- Stat 1: 5+ Years Experience -->
+          <div class="card-luxury p-7 text-center group">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-softPink flex items-center justify-center text-brand-red text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-crown text-amber-500"></i>
+            </div>
+            <div class="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight flex items-center justify-center">
+              <span class="stat-counter" data-target="5">0</span>
+              <span class="text-brand-red ml-1">+</span>
+            </div>
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-brand-red mt-2">Years Experience</h3>
+            <p class="text-xs text-gray-500 mt-1">Pooja Sarkar's seasoned artistry in bridal glamour, hair treatments & cosmetology.</p>
+          </div>
+
+          <!-- Stat 2: 100% Satisfaction -->
+          <div class="card-luxury p-7 text-center group border-amber-200">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-amber-50 flex items-center justify-center text-amber-500 text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-heart text-brand-red"></i>
+            </div>
+            <div class="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight flex items-center justify-center">
+              <span class="stat-counter" data-target="100">0</span>
+              <span class="text-amber-500 ml-1">%</span>
+            </div>
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-gray-900 mt-2">Satisfaction</h3>
+            <p class="text-xs text-gray-500 mt-1">Strict sterilization protocols, customized looks, and verified client loyalty.</p>
+          </div>
+
+          <!-- Stat 3: More than 1000+ Clients -->
+          <div class="card-luxury p-7 text-center group">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-brand-softPink flex items-center justify-center text-brand-red text-2xl mb-4 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-users text-brand-red"></i>
+            </div>
+            <div class="text-4xl sm:text-5xl font-black text-gray-900 tracking-tight flex items-center justify-center">
+              <span class="text-xs font-bold text-gray-400 mr-2 uppercase">More than</span>
+              <span class="stat-counter" data-target="1000">0</span>
+              <span class="text-brand-red ml-1">+</span>
+            </div>
+            <h3 class="text-sm font-extrabold uppercase tracking-wider text-brand-red mt-2">Happy Clients</h3>
+            <p class="text-xs text-gray-500 mt-1">Stunning weddings, glamorous celebrations, and everyday radiant self-care sessions.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COMPLIMENTARY SERVICE PROMOTION BLOCK -->
+    <section id="complimentary" class="py-10 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-6xl mx-auto rounded-3xl p-6 sm:p-10 bg-white border-2 border-brand-red shadow-xl relative overflow-hidden">
+        
+        <div class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+          
+          <div class="max-w-xl">
+            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase text-white bg-brand-red shadow-sm mb-3">
+              <i class="fa-solid fa-gift"></i> Special Customer Privilege
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-black uppercase text-gray-900 tracking-tight">
+              Free Complimentary Service <br class="hidden sm:inline">
+              <span class="text-brand-red">Available With Every Booking!</span>
+            </h2>
+            <p class="text-gray-600 text-xs sm:text-sm mt-2 leading-relaxed">
+              Book any primary service (Makeup, Hair, Skin, or Nail) today and receive a 
+              <strong class="text-brand-red font-bold">Complimentary Deep Radiance Face Glow Treatment or Nourishing Hair Spa Conditioning</strong> completely FREE!
+            </p>
+          </div>
+
+          <div class="w-full lg:w-auto flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar%20Readyme%20Salon,%20I%20want%20to%20avail%20the%20FREE%20COMPLIMENTARY%20SERVICE%20with%20my%20appointment!" 
+               target="_blank"
+               rel="noopener noreferrer"
+               class="w-full sm:w-auto px-6 py-4 rounded-xl bg-[#25D366] hover:bg-[#1ebc57] text-white font-extrabold text-sm flex items-center justify-center gap-2.5 shadow-lg active:scale-95 transition-transform">
+              <i class="fa-brands fa-whatsapp text-2xl"></i>
+              <span>Claim Free Offer on WhatsApp</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION: Makeup, Hair, Skin, Nail (Hair Detangling Therapy completely excluded) -->
+    <section id="services" class="py-14 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <span class="text-xs font-black uppercase tracking-widest text-brand-red bg-brand-softPink px-3.5 py-1 rounded-full border border-brand-red/20">
+            Our Expertise
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-black uppercase text-gray-900 mt-2">
+            Signature Salon Services
+          </h2>
+          <p class="text-gray-500 text-xs sm:text-sm mt-1">Tap the direct WhatsApp button on any service to start instant chat with Pooja Sarkar.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- 1. MAKEUP -->
+          <div class="card-luxury p-6 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-red to-red-600 flex items-center justify-center text-white text-xl mb-4 shadow">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-black text-gray-900 tracking-wide">MAKEUP</h3>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-brand-softPink text-brand-red border border-red-200">HD & 4K</span>
+              </div>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Flawless airbrush bridal transformations, reception glamour, and radiant party makeup tailored for your skin tone.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-gray-700 font-semibold">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> HD Bridal & Sagan Look</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Cocktail & Party Glam</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Top International Brands</li>
+                <li class="flex items-center gap-2 text-brand-red font-bold"><i class="fa-solid fa-gift text-amber-500"></i> Free Complimentary Touchup</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100">
+              <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar,%20I%20want%20to%20book%20an%20appointment%20for%20*MAKEUP*%20at%20Readyme%20Salon."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="w-full py-3 px-4 rounded-xl bg-[#25D366] text-white text-xs font-bold flex items-center justify-center gap-2 shadow active:scale-95 transition-transform">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Book Makeup on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. HAIR (Hair Detangling completely removed) -->
+          <div class="card-luxury p-6 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-600 to-amber-500 flex items-center justify-center text-white text-xl mb-4 shadow">
+                <i class="fa-solid fa-scissors"></i>
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-black text-gray-900 tracking-wide">HAIR</h3>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200">Couture</span>
+              </div>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Designer cuts, Nanoplastia, Botox shine treatment, Keratin smoothening, and dimensional Balayage color.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-gray-700 font-semibold">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Hair Botox & Keratin</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Balayage & Highlights</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Designer Layer & Step Cuts</li>
+                <li class="flex items-center gap-2 text-brand-red font-bold"><i class="fa-solid fa-gift text-amber-500"></i> Free Hair Consultation</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100">
+              <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar,%20I%20want%20to%20book%20an%20appointment%20for%20*HAIR*%20services%20at%20Readyme%20Salon."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="w-full py-3 px-4 rounded-xl bg-[#25D366] text-white text-xs font-bold flex items-center justify-center gap-2 shadow active:scale-95 transition-transform">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Book Hair on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. SKIN -->
+          <div class="card-luxury p-6 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-red to-pink-600 flex items-center justify-center text-white text-xl mb-4 shadow">
+                <i class="fa-solid fa-spa"></i>
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-black text-gray-900 tracking-wide">SKIN</h3>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-brand-softPink text-brand-red border border-red-200">Glow Care</span>
+              </div>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Medical Hydra facial, collagen boosting, anti-pigmentation cleanse, and instant Korean glass skin brightness.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-gray-700 font-semibold">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> 7-Stage Hydra Facial</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Korean Glass Glow Treatment</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Deep Detan & Anti-Tan Pack</li>
+                <li class="flex items-center gap-2 text-brand-red font-bold"><i class="fa-solid fa-gift text-amber-500"></i> Free Hydration Booster</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100">
+              <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar,%20I%20want%20to%20book%20an%20appointment%20for%20*SKIN*%20treatment%20at%20Readyme%20Salon."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="w-full py-3 px-4 rounded-xl bg-[#25D366] text-white text-xs font-bold flex items-center justify-center gap-2 shadow active:scale-95 transition-transform">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Book Skin on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4. NAIL -->
+          <div class="card-luxury p-6 flex flex-col justify-between group">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-red-600 to-rose-700 flex items-center justify-center text-white text-xl mb-4 shadow">
+                <i class="fa-solid fa-hand-sparkles"></i>
+              </div>
+              <div class="flex items-center justify-between">
+                <h3 class="text-lg font-black text-gray-900 tracking-wide">NAIL</h3>
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-50 text-brand-red border border-rose-200">Artistry</span>
+              </div>
+              <p class="text-xs text-gray-600 mt-2 leading-relaxed">
+                Gel & acrylic extensions, 3D chrome nail art, French manicure tips, and bridal nail jewelry designs.
+              </p>
+              <ul class="mt-4 space-y-1.5 text-xs text-gray-700 font-semibold">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Acrylic & Gel Extensions</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Custom 3D Nail Art & Chrome</li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-red text-xs"></i> Russian Spa Manicure</li>
+                <li class="flex items-center gap-2 text-brand-red font-bold"><i class="fa-solid fa-gift text-amber-500"></i> Free Cuticle Care Oil</li>
+              </ul>
+            </div>
+            <div class="mt-6 pt-4 border-t border-gray-100">
+              <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar,%20I%20want%20to%20book%20an%20appointment%20for%20*NAIL*%20extensions%20at%20Readyme%20Salon."
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="w-full py-3 px-4 rounded-xl bg-[#25D366] text-white text-xs font-bold flex items-center justify-center gap-2 shadow active:scale-95 transition-transform">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Book Nail on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STUDIO ONLINE APPOINTMENT SECTION -->
+    <section id="booking" class="py-14 sm:py-20 bg-gradient-to-b from-white via-red-50/30 to-white border-t border-red-100">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-5">
+            <span class="text-xs font-black uppercase tracking-widest text-brand-red bg-brand-softPink px-3.5 py-1 rounded-full border border-brand-red/20">
+              Visit Our Studio
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-black uppercase text-gray-900 mt-2">
+              Book Studio Appointment
+            </h2>
+            <p class="text-gray-600 text-xs sm:text-sm mt-2 leading-relaxed">
+              Step into our luxurious salon setup with arched warm mirrors and plush crimson chairs. Select your preferred slot below:
+            </p>
+
+            <div class="mt-6 space-y-3">
+              <div class="p-3.5 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-green-100 text-green-700 flex items-center justify-center shrink-0">
+                  <i class="fa-brands fa-whatsapp text-xl"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-gray-500 uppercase">Direct Helpline</span>
+                  <a href="https://wa.me/918588902235" target="_blank" class="text-sm font-extrabold text-brand-red block">+91 8588902235</a>
+                </div>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-white border border-gray-200 shadow-sm flex items-center gap-3">
+                <div class="w-10 h-10 rounded-lg bg-red-100 text-brand-red flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-clock text-lg"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold text-gray-500 uppercase">Operating Hours</span>
+                  <p class="text-xs font-bold text-gray-800">10:00 AM – 8:30 PM (All 7 Days Open)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Studio Form -->
+          <div class="lg:col-span-7">
+            <div class="bg-white rounded-3xl p-5 sm:p-8 border-2 border-red-100 shadow-xl">
+              <h3 class="text-lg sm:text-xl font-black uppercase text-gray-900 mb-1">Schedule Studio Visit</h3>
+              <p class="text-xs text-gray-500 mb-5">Generates pre-formatted WhatsApp booking text</p>
+
+              <form id="studioForm" class="space-y-4">
+                <div>
+                  <label for="studioClientName" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">Your Name *</label>
+                  <input type="text" id="studioClientName" required placeholder="e.g. Priya Sharma"
+                         class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-brand-red outline-none text-gray-900 transition-all">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="studioService" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">Service Type *</label>
+                    <select id="studioService" required class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-brand-red outline-none text-gray-900 transition-all">
+                      <option value="Makeup">Makeup (Bridal / HD Glam)</option>
+                      <option value="Hair">Hair (Cut, Spa, Keratin, Botox)</option>
+                      <option value="Skin">Skin (Hydra Glow Facial)</option>
+                      <option value="Nail">Nail (Extensions & Art)</option>
+                      <option value="Full Studio Makeover">Full Studio Makeover</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label for="studioDate" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">Preferred Date *</label>
+                    <input type="date" id="studioDate" required class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-brand-red outline-none text-gray-900 transition-all">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="studioNotes" class="block text-xs font-extrabold uppercase text-gray-700 mb-1">Special Notes / Free Offer Claim</label>
+                  <input type="text" id="studioNotes" placeholder="e.g., Want to claim the Free Complimentary Glow treatment"
+                         class="w-full px-3.5 py-3 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:border-brand-red outline-none text-gray-900 transition-all">
+                </div>
+
+                <button type="submit" 
+                        class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-brand-red to-brand-darkRed text-white font-black text-sm sm:text-base shadow-lg shadow-red-500/30 flex items-center justify-center gap-2 active:scale-95 transition-transform border border-brand-red">
+                  <i class="fa-brands fa-whatsapp text-2xl text-green-300"></i>
+                  <span>Confirm Studio Slot on WhatsApp (8588902235)</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-red-100 pt-10 pb-28 sm:pb-12 text-center sm:text-left">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-8 border-b border-gray-100 items-start">
+        
+        <!-- Logo Column -->
+        <div class="md:col-span-2 flex flex-col items-center sm:items-start">
+          <div class="bg-brand-red px-3.5 py-2 rounded-sm shadow-md flex flex-col justify-center items-center text-center">
+            <div class="text-[20px] font-black tracking-normal leading-[1.02] text-white">
+              READYME
+            </div>
+            <div class="text-[30px] font-light tracking-[0.06em] leading-[0.9] text-white">
+              SALON
+            </div>
+            <div class="mt-1 w-full bg-white py-[2px] px-2 text-center rounded-[1px]">
+              <span class="text-[8.5px] font-extrabold tracking-[0.34em] text-brand-red block uppercase leading-none pl-1">
+                POOJA SARKAR
+              </span>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 mt-3 max-w-sm text-center sm:text-left leading-relaxed">
+            READYME SALON - POOJA SARKAR offers world-class studio services and doorstep Door-to-Door luxury beauty across Makeup, Hair, Skin, and Nails.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="text-xs text-gray-600 space-y-2">
+          <p class="font-black text-gray-900 uppercase text-xs tracking-wider mb-2">Quick Navigation</p>
+          <p><a href="#home-service" class="text-green-700 font-extrabold hover:underline">🏡 Door to Door Home Service</a></p>
+          <p><a href="#services" class="hover:text-brand-red transition-colors">Makeup & Hair Artistry</a></p>
+          <p><a href="#services" class="hover:text-brand-red transition-colors">Hydra Facial & Nail Extensions</a></p>
+          <p><a href="#complimentary" class="text-brand-red font-bold hover:underline">Free Complimentary Service</a></p>
+        </div>
+
+        <!-- Contact Hotline -->
+        <div class="text-xs text-gray-600 space-y-1.5">
+          <p class="font-black text-gray-900 uppercase text-xs tracking-wider mb-2">Direct Contact</p>
+          <p class="text-gray-500">Call / WhatsApp Booking:</p>
+          <p class="text-base font-black text-brand-red">+91 8588902235</p>
+          <p class="text-gray-500">Mon - Sun: 10:00 AM - 8:30 PM</p>
+        </div>
+
+      </div>
+
+      <div class="pt-5 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-2">
+        <p>© <span id="yearSpan"></span> READYME SALON - POOJA SARKAR. All rights reserved.</p>
+        <p class="text-gray-500 font-medium">Engineered for iOS (iPhone) & Android Mobile Responsiveness</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY BOTTOM APP BAR (Specifically engineered for iPhone home bar & Android safe areas) -->
+  <aside aria-label="Mobile Quick Action Navigation" class="sm:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-red-200 px-3 py-2 mobile-safe-bottom shadow-2xl flex items-center justify-between gap-2">
+    
+    <!-- Call Direct Button -->
+    <a href="tel:+918588902235" 
+       class="flex-1 py-2.5 px-2 rounded-xl bg-gray-900 text-white text-center font-bold text-xs flex items-center justify-center gap-1.5 active:scale-95 transition-transform">
+      <i class="fa-solid fa-phone text-xs text-amber-400"></i>
+      <span>Call</span>
+    </a>
+
+    <!-- Door to Door Quick Action -->
+    <a href="#home-service" 
+       class="flex-1 py-2.5 px-2 rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 text-white text-center font-black text-xs flex items-center justify-center gap-1.5 active:scale-95 transition-transform shadow-sm">
+      <i class="fa-solid fa-house-chimney-medical text-xs"></i>
+      <span>Home Visit</span>
+    </a>
+
+    <!-- WhatsApp Action Button -->
+    <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar%20Readyme%20Salon,%20I%20am%20chatting%20from%20mobile%20and%20want%20to%20book%20an%20appointment."
+       target="_blank"
+       rel="noopener noreferrer"
+       class="flex-1 py-2.5 px-2 rounded-xl bg-[#25D366] text-white text-center font-black text-xs flex items-center justify-center gap-1.5 active:scale-95 transition-transform shadow">
+      <i class="fa-brands fa-whatsapp text-sm"></i>
+      <span>WhatsApp</span>
+    </a>
+
+  </aside>
+
+  <!-- DESKTOP / TABLET PERSISTENT FLOATING WHATSAPP BUTTON -->
+  <aside aria-label="WhatsApp Desktop Floating Button" class="hidden sm:block fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/918588902235?text=Hello%20Pooja%20Sarkar%20Readyme%20Salon,%20I%20want%20to%20inquire%20about%20Salon%20and%20Door-to-Door%20Home%20Services." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="flex items-center gap-3 bg-[#25D366] hover:bg-[#1ebc57] text-white p-3.5 px-5 rounded-full shadow-2xl wa-pulse-glow transition-all active:scale-95">
+      <i class="fa-brands fa-whatsapp text-2xl"></i>
+      <span class="font-bold text-sm tracking-wide">WhatsApp: 8588902235</span>
+    </a>
+  </aside>
+
+  <!-- JAVASCRIPT: Mobile Navigation, Canvas Particles, Animated Counting & WhatsApp APIs -->
+  <script>
+    // 1. Set current year
+    document.getElementById('yearSpan').textContent = new Date().getFullYear();
+
+    // 2. Set min date to today on all pickers
+    const todayStr = new Date().toISOString().split('T')[0];
+    const studioDatePicker = document.getElementById('studioDate');
+    const homeDatePicker = document.getElementById('homeDate');
+    if (studioDatePicker) studioDatePicker.min = todayStr;
+    if (homeDatePicker) homeDatePicker.min = todayStr;
+
+    // 3. Mobile Slide-out Drawer Menu Logic
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const drawerPanel = document.getElementById('drawerPanel');
+    const drawerLinks = document.querySelectorAll('.drawer-link');
+
+    function openDrawer() {
+      mobileDrawer.classList.remove('pointer-events-none', 'opacity-0');
+      mobileDrawer.classList.add('opacity-100');
+      drawerPanel.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden'; // prevent scroll lock bleed on iOS
+    }
+
+    function closeDrawer() {
+      mobileDrawer.classList.add('opacity-0');
+      drawerPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        mobileDrawer.classList.add('pointer-events-none');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    if (mobileNavToggle) mobileNavToggle.addEventListener('click', openDrawer);
+    if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+    if (mobileDrawer) {
+      mobileDrawer.addEventListener('click', (e) => {
+        if (e.target === mobileDrawer) closeDrawer();
+      });
+    }
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+
+    // 4. Scroll-Triggered Animated Counters (5+ Years, 100% Satisfaction, 1000+ Clients)
+    let statsTriggered = false;
+    const statCounters = document.querySelectorAll('.stat-counter');
+    const statsSection = document.getElementById('stats');
+
+    function runCounters() {
+      statCounters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 1800; // ms
+        const steps = 60;
+        const increment = target / steps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            counter.innerText = target;
+            clearInterval(timer);
+          } else {
+            counter.innerText = Math.ceil(current);
+          }
+        }, duration / steps);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !statsTriggered) {
+          statsTriggered = true;
+          runCounters();
+        }
+      });
+    }, { threshold: 0.25 });
+
+    if (statsSection) observer.observe(statsSection);
+
+    // 5. Door-to-Door Home Service Form -> WhatsApp (8588902235)
+    const doorstepForm = document.getElementById('doorstepForm');
+    if (doorstepForm) {
+      doorstepForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('homeName').value.trim();
+        const phone = document.getElementById('homePhone').value.trim();
+        const occasion = document.getElementById('homeOccasion').value;
+        const service = document.getElementById('homeServiceSelect').value;
+        const date = document.getElementById('homeDate').value;
+        const timing = document.getElementById('homeTiming').value;
+        const address = document.getElementById('homeAddressFull').value.trim();
+
+        const waText = 
+          `*🏡 NEW DOOR-TO-DOOR HOME SALON BOOKING 🏡*%0A%0A` +
+          `👤 *Client Name:* ${encodeURIComponent(name)}%0A` +
+          `📞 *Phone Number:* ${encodeURIComponent(phone)}%0A` +
+          `🎉 *Occasion:* ${encodeURIComponent(occasion)}%0A` +
+          `💅 *Service Requested:* ${encodeURIComponent(service)}%0A` +
+          `📅 *Date:* ${encodeURIComponent(date)}%0A` +
+          `⏰ *Time Slot:* ${encodeURIComponent(timing)}%0A` +
+          `📍 *Complete Address:* ${encodeURIComponent(address)}%0A` +
+          `🎁 *Special Privilege:* FREE COMPLIMENTARY GLOW PACK%0A%0A` +
+          `Please confirm stylist availability and pricing for this address!`;
+
+        window.open(`https://wa.me/918588902235?text=${waText}`, '_blank');
+      });
+    }
+
+    // 6. Studio Online Appointment Form -> WhatsApp (8588902235)
+    const studioForm = document.getElementById('studioForm');
+    if (studioForm) {
+      studioForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('studioClientName').value.trim();
+        const service = document.getElementById('studioService').value;
+        const date = document.getElementById('studioDate').value;
+        const notes = document.getElementById('studioNotes').value.trim() || 'None';
+
+        const waText = 
+          `*✨ STUDIO APPOINTMENT REQUEST - READYME SALON ✨*%0A%0A` +
+          `👤 *Client Name:* ${encodeURIComponent(name)}%0A` +
+          `💅 *Selected Service:* ${encodeURIComponent(service)}%0A` +
+          `📅 *Date:* ${encodeURIComponent(date)}%0A` +
+          `🎁 *Claim Offer:* FREE COMPLIMENTARY SERVICE%0A` +
+          `📝 *Notes / Request:* ${encodeURIComponent(notes)}%0A%0A` +
+          `Please confirm available slot for Pooja Sarkar's studio.`;
+
+        window.open(`https://wa.me/918588902235?text=${waText}`, '_blank');
+      });
+    }
+
+    // 7. Lightweight Ambient 3D Bokeh Particle Background for Mobile & Desktop
+    const canvas = document.getElementById('ambientCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class BokehParticle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 3 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4;
+        this.color = Math.random() > 0.5 ? 'rgba(212, 175, 55, 0.4)' : 'rgba(227, 6, 19, 0.25)';
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    // Limit particles on mobile devices for battery efficiency and 60fps performance
+    const particleCount = window.innerWidth < 768 ? 20 : 45;
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new BokehParticle());
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script>
+</body>
+</html>
